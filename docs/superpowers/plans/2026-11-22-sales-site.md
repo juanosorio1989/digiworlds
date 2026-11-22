@@ -240,3 +240,5 @@ No task touches money, production data, schemas, auth or secrets, so there is on
 ## Build notes
 
 (Filled in by Task 1 Step 7 and Task 2 Step 9.)
+
+- Task 1 Step 7 (`build.format: 'file'`, `trailingSlash: 'never'`, Astro 7.4.13): `src/pages/index.astro` -> `dist/index.html`; `src/pages/en/index.astro` -> `dist/en.html` (not `dist/en/index.html`); `src/pages/precios.astro` -> `dist/precios.html`. So `distFileFor('/')` = `index.html`, and any other path `/x/y` = `x/y.html`.

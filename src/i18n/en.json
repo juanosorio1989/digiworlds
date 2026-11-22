@@ -1,0 +1,10 @@
+{
+  "nav": {
+    "home": "Home",
+    "pricing": "Pricing",
+    "terms": "Terms",
+    "refunds": "Refunds",
+    "privacy": "Privacy",
+    "contact": "Contact"
+  }
+}
