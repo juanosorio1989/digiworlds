@@ -76,3 +76,24 @@ test('isPlaceholder', () => {
   assert.equal(isPlaceholder('OPERATOR_NAME'), true);
   assert.equal(isPlaceholder('SUPPORT_EMAIL'), true);
 });
+
+test('inherited names are not tokens or keys', () => {
+  (es as any).tmp = { c: '{constructor}' };
+  try {
+    assert.throws(() => t('es', 'tmp.c'), /Unknown token/);
+    assert.throws(() => tHtml('es', 'tmp.c'), /Unknown token/);
+  } finally {
+    delete (es as any).tmp;
+  }
+  assert.throws(() => tRaw('es', 'nav.constructor'), /Missing i18n key/);
+});
+
+test('malformed tokens throw', () => {
+  (es as any).tmp = { a: 'x {support-email}', b: 'x { price }' };
+  try {
+    assert.throws(() => t('es', 'tmp.a'), /Unknown token/);
+    assert.throws(() => t('es', 'tmp.b'), /Unknown token/);
+  } finally {
+    delete (es as any).tmp;
+  }
+});

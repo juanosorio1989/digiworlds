@@ -1,10 +1,6 @@
 {
   "name": "digiworlds-site",
   "version": "1.0.0",
-  "description": "",
-  "directories": {
-    "doc": "docs"
-  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -16,18 +12,12 @@
     "type": "git",
     "url": "git+https://github.com/juanosorio1989/digiworlds.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/juanosorio1989/digiworlds/issues"
-  },
-  "homepage": "https://github.com/juanosorio1989/digiworlds#readme",
+  "license": "UNLICENSED",
   "dependencies": {
-    "astro": "^7.4.13"
+    "astro": "7.4.13"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.12",
+    "@astrojs/check": "0.9.12",
     "typescript": "^6.0.3",
     "wrangler": "^4.166.0"
   },

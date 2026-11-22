@@ -34,7 +34,7 @@ function escapeHtml(s: string): string {
 function lookup(lang: Lang, key: string): unknown {
   let node: unknown = dictionaries[lang];
   for (const part of key.split('.')) {
-    if (node && typeof node === 'object' && part in node) {
+    if (node && typeof node === 'object' && Object.hasOwn(node, part)) {
       node = (node as Record<string, unknown>)[part];
     } else {
       return undefined;
@@ -52,9 +52,9 @@ function interpolate(
   const all = { ...siteVars(), ...vars };
   let out = '';
   let last = 0;
-  for (const m of template.matchAll(/\{(\w+)\}/g)) {
+  for (const m of template.matchAll(/\{([^{}]*)\}/g)) {
     const name = m[1];
-    if (!(name in all)) throw new Error(`Unknown token "{${name}}" in "${key}"`);
+    if (!Object.hasOwn(all, name)) throw new Error(`Unknown token "{${name}}" in "${key}"`);
     const value = all[name];
     const idx = m.index ?? 0;
     const literal = template.slice(last, idx);

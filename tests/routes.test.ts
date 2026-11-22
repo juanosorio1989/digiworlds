@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { pathFor, routes, pageKeys, langs, absoluteUrl, alternates } from '../src/i18n/routes.ts';
+import { pathFor, routes, pageKeys, langs, otherLang, absoluteUrl, alternates } from '../src/i18n/routes.ts';
 
 test('pathFor', () => {
   assert.equal(pathFor('pricing', 'en'), '/en/pricing');
@@ -29,4 +29,9 @@ test('alternates', () => {
     { hreflang: 'en', href: 'https://digiworlds.store/en/terms' },
     { hreflang: 'x-default', href: 'https://digiworlds.store/terminos' },
   ]);
+});
+
+test('otherLang', () => {
+  assert.equal(otherLang('es'), 'en');
+  assert.equal(otherLang('en'), 'es');
 });
