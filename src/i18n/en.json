@@ -168,7 +168,7 @@
       {
         "heading": "8. Refunds",
         "paragraphs": [
-          "You get a full refund in the first 14 days. The details are in the refund policy."
+          "You get a full refund in the first 14 days from your first payment. The details are in the refund policy."
         ],
         "link": "refunds"
       },
@@ -202,7 +202,7 @@
   },
   "refunds": {
     "title": "Refund policy",
-    "intro": "We want you to try digiworlds without risk. This is how refunds work.",
+    "intro": "This is how refunds work.",
     "sections": [
       {
         "heading": "Full refund in the first 14 days",

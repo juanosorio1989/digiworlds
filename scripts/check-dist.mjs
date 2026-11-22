@@ -84,6 +84,12 @@ function checkPage(html, key, lang, errors, warnings) {
     if (!fa.some((a) => a.href === p)) err(`<footer> is missing a link to ${p}`);
   }
 
+  if (key === 'terms') {
+    const main = /<main[\s\S]*?<\/main>/i.exec(html)?.[0] ?? '';
+    const want = pathFor('refunds', lang);
+    if (!tagsOf(main, 'a').map(parseAttrs).some((a) => a.href === want)) err(`<main> is missing a link to ${want}`);
+  }
+
   if (legalKeys.includes(key)) {
     if (!html.includes(prevailing[lang])) err(`missing prevailing-language sentence "${prevailing[lang]}"`);
   }

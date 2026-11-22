@@ -168,7 +168,7 @@
       {
         "heading": "8. Reembolsos",
         "paragraphs": [
-          "Tienes reembolso completo en los primeros 14 días. Los detalles están en la política de reembolsos."
+          "Tienes reembolso completo en los primeros 14 días desde tu primer pago. Los detalles están en la política de reembolsos."
         ],
         "link": "refunds"
       },
@@ -202,7 +202,7 @@
   },
   "refunds": {
     "title": "Política de reembolsos",
-    "intro": "Queremos que pruebes digiworlds sin riesgo. Así funcionan los reembolsos.",
+    "intro": "Así funcionan los reembolsos.",
     "sections": [
       {
         "heading": "Reembolso completo en los primeros 14 días",
@@ -297,7 +297,7 @@
         "heading": "6. No vendemos tus datos",
         "paragraphs": [
           "No vendemos tus datos a cambio de dinero.",
-          "Compartir eventos de anuncios con Meta y TikTok puede contar como «compartir» según algunas leyes estatales de EE. UU. Puedes optar por no participar con el enlace «No vender ni compartir mi información personal» o con la señal Global Privacy Control de tu navegador."
+          "Compartir eventos de anuncios con Meta y TikTok puede contar como «compartir» según algunas leyes estatales de EE. UU. Puedes optar por no participar con el enlace «No vender ni compartir mi información» o con la señal Global Privacy Control de tu navegador."
         ]
       },
       {
