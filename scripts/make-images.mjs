@@ -1,5 +1,6 @@
 // Regenerates public/favicon.*, apple-touch-icon.png and og/og-<lang>.png. Run: node scripts/make-images.mjs
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
 const BRAND = '#0b4f9c';
@@ -18,7 +19,7 @@ const faviconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" 
 `;
 writeFileSync(out('favicon.svg'), faviconSvg);
 
-await sharp(Buffer.from(faviconSvg), { density: 384 }).resize(180, 180).png().toFile(out('apple-touch-icon.png').pathname);
+await sharp(Buffer.from(faviconSvg), { density: 384 }).resize(180, 180).png().toFile(fileURLToPath(out('apple-touch-icon.png')));
 
 // ICO with one 32x32 PNG image (PNG-in-ICO is valid for all current browsers).
 const png32 = await sharp(Buffer.from(faviconSvg), { density: 192 }).resize(32, 32).png().toBuffer();
@@ -52,6 +53,6 @@ for (const lang of ['es', 'en']) {
   <text x="80" y="130" font-family="${FONT}" font-size="48" font-weight="700" fill="${BRAND}">digiworlds</text>
   <text x="80" y="300" font-family="${FONT}" font-size="72" font-weight="700" fill="${TEXT}">${tspans}</text>
 </svg>`;
-  await sharp(Buffer.from(svg)).png().toFile(out(`og/og-${lang}.png`).pathname);
+  await sharp(Buffer.from(svg)).png().toFile(fileURLToPath(out(`og/og-${lang}.png`)));
 }
 console.log('images generated');
