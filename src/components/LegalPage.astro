@@ -1,0 +1,31 @@
+---
+import { pathFor } from '../i18n/routes.ts';
+import type { Lang, PageKey } from '../i18n/routes.ts';
+import { t, tRaw } from '../i18n/t.ts';
+interface Section { heading: string; paragraphs: string[]; items?: string[]; link?: PageKey }
+interface LegalContent { title: string; intro: string; sections: Section[] }
+interface Props { lang: Lang; page: 'terms' | 'refunds' | 'privacy' }
+const { lang, page } = Astro.props;
+const content = tRaw<LegalContent>(lang, page);
+---
+<section class="section legal" aria-labelledby={`${page}-title`}>
+  <div class="wrap">
+    <h1 id={`${page}-title`} set:html={content.title} />
+    <p class="note meta-line">{t(lang, 'legal.updated')}</p>
+    <p class="note" set:html={content.intro} />
+    {content.sections.map((s) => (
+      <section class="legal-section">
+        <h2 set:html={s.heading} />
+        {s.paragraphs.map((p) => <p class="note" set:html={p} />)}
+        {s.items && (
+          <ul class="note legal-list">
+            {s.items.map((i) => <li set:html={i} />)}
+          </ul>
+        )}
+        {s.link && (
+          <p class="note"><a href={pathFor(s.link, lang)}>{t(lang, `nav.${s.link}`)}</a></p>
+        )}
+      </section>
+    ))}
+  </div>
+</section>

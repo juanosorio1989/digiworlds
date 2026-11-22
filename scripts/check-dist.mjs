@@ -23,6 +23,10 @@ function tagsOf(html, name) {
   return [...html.matchAll(new RegExp(`<${name}(?:\\s[^>]*)?>`, 'gi'))].map((m) => m[0]);
 }
 
+const legalKeys = ['terms', 'refunds', 'privacy'];
+const prevailing = { es: 'prevalece la versión en español', en: 'the Spanish version prevails' };
+const countH2 = (html) => (html.match(/<h2[\s>]/gi) ?? []).length;
+
 function checkPage(html, key, lang, errors, warnings) {
   const path = pathFor(key, lang);
   const where = `${lang}:${key} (${path})`;
@@ -80,6 +84,10 @@ function checkPage(html, key, lang, errors, warnings) {
     if (!fa.some((a) => a.href === p)) err(`<footer> is missing a link to ${p}`);
   }
 
+  if (legalKeys.includes(key)) {
+    if (!html.includes(prevailing[lang])) err(`missing prevailing-language sentence "${prevailing[lang]}"`);
+  }
+
   if (html.includes('class="placeholder"') || html.includes('class=placeholder')) {
     warnings.push(`${where}: contains an unfilled placeholder (class="placeholder")`);
   }
@@ -94,6 +102,12 @@ export function checkDist(distDir = 'dist') {
       if (!existsSync(file)) continue;
       checkPage(readFileSync(file, 'utf8'), key, lang, errors, warnings);
     }
+  }
+  for (const key of legalKeys) {
+    const files = langs.map((l) => join(distDir, distFileFor(routes[key][l])));
+    if (!files.every((f) => existsSync(f))) continue;
+    const [es, en] = files.map((f) => countH2(readFileSync(f, 'utf8')));
+    if (es !== en) errors.push(`${key}: <h2> count differs (es ${es}, en ${en})`);
   }
   if (!existsSync(join(distDir, distFileFor('/')))) errors.push('dist/index.html is missing');
   return { errors, warnings };

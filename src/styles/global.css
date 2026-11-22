@@ -156,3 +156,10 @@ mark.placeholder { background: var(--mark-bg); color: var(--text); padding: 0 0.
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Legal pages */
+.legal .meta-line { font-size: 0.95rem; }
+.legal-section { margin-top: 2rem; }
+.legal-section h2 { font-size: 1.5rem; }
+.legal-list { padding-left: 1.25rem; }
+.legal-list li { margin-bottom: 0.5rem; }

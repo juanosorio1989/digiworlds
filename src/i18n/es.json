@@ -42,6 +42,18 @@
     "contact": {
       "title": "Contacto — digiworlds",
       "description": "Escríbenos a {supportEmail}. Respondemos en un máximo de 2 días hábiles."
+    },
+    "terms": {
+      "title": "Términos del servicio — digiworlds",
+      "description": "Las reglas de digiworlds en palabras sencillas: quiénes somos, planes, cancelación y ley aplicable."
+    },
+    "refunds": {
+      "title": "Política de reembolsos — digiworlds",
+      "description": "Reembolso completo en los primeros 14 días desde tu primer pago. Pídelo por correo y te lo devolvemos."
+    },
+    "privacy": {
+      "title": "Política de privacidad — digiworlds",
+      "description": "Qué datos usamos, para qué, con qué proveedores y cómo puedes pedir que los borremos."
     }
   },
   "home": {
@@ -101,5 +113,229 @@
     "moreTitle": "Solicitudes comunes",
     "refundsLink": "Reembolsos",
     "privacyLink": "Privacidad y eliminación de datos"
+  },
+  "terms": {
+    "title": "Términos del servicio",
+    "intro": "Estas reglas explican cómo funciona digiworlds. Las escribimos en palabras sencillas. Al usar el servicio, aceptas estos términos.",
+    "sections": [
+      {
+        "heading": "1. Quiénes somos",
+        "paragraphs": [
+          "digiworlds es operado por {operatorName}, una persona natural con sede en Colombia.",
+          "Puedes escribirnos a {supportEmail}."
+        ]
+      },
+      {
+        "heading": "2. Solo adultos",
+        "paragraphs": [
+          "Para usar digiworlds debes tener 18 años o más."
+        ]
+      },
+      {
+        "heading": "3. El servicio",
+        "paragraphs": [
+          "digiworlds es un servicio digital para practicar la pronunciación del inglés. Se ofrece en línea.",
+          "No es una escuela y no da certificados."
+        ]
+      },
+      {
+        "heading": "4. Sin garantía de resultados",
+        "paragraphs": [
+          "No prometemos que vayas a alcanzar un nivel de inglés específico. Tu avance depende de cuánto practiques."
+        ]
+      },
+      {
+        "heading": "5. Planes y pagos",
+        "paragraphs": [
+          "Hay un plan gratis y un plan Premium de US$ {price} al mes.",
+          "Los pagos los procesa Polar, nuestro comerciante registrado (merchant of record). Polar también cobra y paga los impuestos sobre las ventas.",
+          "Los términos de pago de Polar también se aplican a tu compra."
+        ]
+      },
+      {
+        "heading": "6. Renovación automática",
+        "paragraphs": [
+          "Premium se renueva cada mes hasta que lo canceles."
+        ]
+      },
+      {
+        "heading": "7. Cancelación",
+        "paragraphs": [
+          "Puedes cancelar cuando quieras. Usa «Administrar suscripción» en la app (el portal de clientes de Polar) o escríbenos a {supportEmail}.",
+          "Conservas el acceso hasta el final del período que ya pagaste."
+        ]
+      },
+      {
+        "heading": "8. Reembolsos",
+        "paragraphs": [
+          "Tienes reembolso completo en los primeros 14 días. Los detalles están en la política de reembolsos."
+        ],
+        "link": "refunds"
+      },
+      {
+        "heading": "9. Uso aceptable",
+        "paragraphs": [
+          "Usa digiworlds solo para ti.",
+          "No compartas tu cuenta con otras personas y no abuses del servicio."
+        ]
+      },
+      {
+        "heading": "10. Cambios",
+        "paragraphs": [
+          "Podemos actualizar estos términos. Siempre mostraremos la fecha de la última actualización.",
+          "Si el cambio es importante, te avisaremos por correo electrónico."
+        ]
+      },
+      {
+        "heading": "11. Ley aplicable",
+        "paragraphs": [
+          "Estos términos se rigen por las leyes de Colombia."
+        ]
+      },
+      {
+        "heading": "12. Idioma",
+        "paragraphs": [
+          "Estos términos existen en español e inglés. Si hay diferencias, prevalece la versión en español."
+        ]
+      }
+    ]
+  },
+  "refunds": {
+    "title": "Política de reembolsos",
+    "intro": "Queremos que pruebes digiworlds sin riesgo. Así funcionan los reembolsos.",
+    "sections": [
+      {
+        "heading": "Reembolso completo en los primeros 14 días",
+        "paragraphs": [
+          "Si pides el reembolso dentro de los 14 días posteriores a tu primer pago, te devolvemos todo.",
+          "Escríbenos a {supportEmail} con el correo electrónico de tu cuenta."
+        ]
+      },
+      {
+        "heading": "Después de 14 días",
+        "paragraphs": [
+          "Después de los primeros 14 días no hay reembolso del período en curso.",
+          "Puedes cancelar para detener la próxima renovación. Conservas el acceso hasta el final del período que ya pagaste."
+        ]
+      },
+      {
+        "heading": "Cómo se paga el reembolso",
+        "paragraphs": [
+          "Los reembolsos se hacen a través de Polar, a la forma de pago original.",
+          "Tu banco puede tardar varios días en mostrarlo."
+        ]
+      },
+      {
+        "heading": "Idioma",
+        "paragraphs": [
+          "Esta política existe en español e inglés. Si hay diferencias, prevalece la versión en español."
+        ]
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Política de privacidad",
+    "intro": "Aquí explicamos qué datos usamos, para qué y con quién los compartimos.",
+    "sections": [
+      {
+        "heading": "1. Quién es responsable",
+        "paragraphs": [
+          "{operatorName}, Colombia. Correo: {supportEmail}."
+        ]
+      },
+      {
+        "heading": "2. Datos que recogemos",
+        "paragraphs": [
+          "Recogemos estos datos:"
+        ],
+        "items": [
+          "Tu correo y tu nombre de cuenta, también cuando entras con «Continuar con Google».",
+          "Tu progreso de aprendizaje y tus puntajes de pronunciación.",
+          "Tu suscripción a notificaciones, si activas los recordatorios.",
+          "Datos técnicos básicos que necesitamos para protegernos de bots."
+        ]
+      },
+      {
+        "heading": "3. Tu voz",
+        "paragraphs": [
+          "Tu voz se envía a Microsoft Azure para calificar tu pronunciación y después se descarta.",
+          "Solo se guarda si activas «Guardar mis grabaciones». Esa opción viene desactivada. Las grabaciones guardadas se almacenan en Cloudflare R2.",
+          "Los consejos hablados en español los genera Azure con anticipación y nunca usan tu voz."
+        ]
+      },
+      {
+        "heading": "4. Para qué usamos tus datos",
+        "paragraphs": [
+          "Los usamos para:"
+        ],
+        "items": [
+          "Hacer funcionar el servicio y mostrarte tu progreso.",
+          "Enviarte enlaces de acceso y recordatorios.",
+          "Procesar pagos y dar soporte.",
+          "Protegernos de bots.",
+          "Medir nuestros anuncios."
+        ]
+      },
+      {
+        "heading": "5. Proveedores que usamos",
+        "paragraphs": [
+          "Estas empresas nos ayudan a operar el servicio:"
+        ],
+        "items": [
+          "Supabase: cuentas y datos de progreso.",
+          "Microsoft Azure Speech: calificación de pronunciación y consejos hablados.",
+          "Vercel: alojamiento de la app.",
+          "Polar: pagos, impuestos sobre las ventas y portal de suscripción.",
+          "Cloudflare: DNS, este sitio web y sus estadísticas sin cookies, almacenamiento R2 (audio de la app y grabaciones guardadas) y Turnstile (protección contra bots).",
+          "Google: inicio de sesión con «Continuar con Google».",
+          "Un proveedor de correo electrónico (por ejemplo, Resend): enlaces de acceso.",
+          "Servicios de notificaciones push de los navegadores (Apple, Google, Mozilla): recordatorios.",
+          "Meta y TikTok: medición de anuncios (píxeles y eventos del servidor). Solo reciben eventos como visita, registro, pago y compra. Nunca reciben audio, puntajes ni sonidos."
+        ]
+      },
+      {
+        "heading": "6. No vendemos tus datos",
+        "paragraphs": [
+          "No vendemos tus datos a cambio de dinero.",
+          "Compartir eventos de anuncios con Meta y TikTok puede contar como «compartir» según algunas leyes estatales de EE. UU. Puedes optar por no participar con el enlace «No vender ni compartir mi información personal» o con la señal Global Privacy Control de tu navegador."
+        ]
+      },
+      {
+        "heading": "7. Cookies",
+        "paragraphs": [
+          "Usamos estas cookies. No usamos analítica de producto como Google Analytics."
+        ],
+        "items": [
+          "Cookies de sesión de acceso (necesarias).",
+          "Cookies de Turnstile (protección contra bots).",
+          "Cookies de anuncios de Meta y TikTok (se desactivan con la opción de no participar o con GPC)."
+        ]
+      },
+      {
+        "heading": "8. Cancelar",
+        "paragraphs": [
+          "Puedes cancelar desde «Administrar suscripción» en la app, que abre el portal de clientes de Polar, o por correo electrónico."
+        ]
+      },
+      {
+        "heading": "9. Borrar tus datos",
+        "paragraphs": [
+          "Escríbenos a {supportEmail} y borramos tu cuenta, tu progreso y las grabaciones guardadas."
+        ]
+      },
+      {
+        "heading": "10. Menores",
+        "paragraphs": [
+          "El servicio es solo para adultos de 18 años o más."
+        ]
+      },
+      {
+        "heading": "11. Cambios e idioma",
+        "paragraphs": [
+          "Podemos actualizar esta política. Siempre mostraremos la fecha de la última actualización.",
+          "Esta política existe en español e inglés. Si hay diferencias, prevalece la versión en español."
+        ]
+      }
+    ]
   }
 }

@@ -1,0 +1,10 @@
+---
+import Base from '../layouts/Base.astro';
+import LegalPage from '../components/LegalPage.astro';
+import type { Lang } from '../i18n/routes.ts';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+---
+<Base lang={lang} page="refunds">
+  <LegalPage lang={lang} page="refunds" />
+</Base>
