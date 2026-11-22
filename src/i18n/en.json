@@ -1,0 +1,350 @@
+{
+  "nav": {
+    "home": "Home",
+    "pricing": "Pricing",
+    "terms": "Terms",
+    "refunds": "Refunds",
+    "privacy": "Privacy",
+    "contact": "Contact"
+  },
+  "brand": "digiworlds",
+  "switch": {
+    "label": "Español"
+  },
+  "cta": {
+    "try": "Try it free"
+  },
+  "launch": {
+    "label": "Coming soon"
+  },
+  "skip": "Skip to content",
+  "aria": {
+    "mainNav": "Main menu",
+    "footerNav": "Site links",
+    "home": "digiworlds, home"
+  },
+  "footer": {
+    "copy": "© {year} digiworlds",
+    "email": "Email us: {supportEmail}"
+  },
+  "legal": {
+    "updated": "Last updated: {date}"
+  },
+  "meta": {
+    "home": {
+      "title": "digiworlds — Improve your English pronunciation",
+      "description": "Practice American English pronunciation on your phone, with help in Spanish. For Spanish-speaking adults living in the United States."
+    },
+    "pricing": {
+      "title": "Pricing — digiworlds",
+      "description": "Start free. Premium is US$ {price} per month and you can cancel anytime."
+    },
+    "contact": {
+      "title": "Contact — digiworlds",
+      "description": "Email us at {supportEmail}. We reply within 2 business days."
+    },
+    "terms": {
+      "title": "Terms of service — digiworlds",
+      "description": "The rules of digiworlds in plain words: who we are, plans, cancellation and governing law."
+    },
+    "refunds": {
+      "title": "Refund policy — digiworlds",
+      "description": "Full refund in the first 14 days from your first payment. Ask by email and we pay it back."
+    },
+    "privacy": {
+      "title": "Privacy policy — digiworlds",
+      "description": "What data we use, why, which providers we use and how you can ask us to delete it."
+    },
+    "notFound": {
+      "title": "Page not found — digiworlds",
+      "description": "This page does not exist or has moved."
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Speak English with more confidence",
+      "text": "Practice American English pronunciation on your phone. Listen, repeat, and get instant help in Spanish.",
+      "audience": "For Spanish-speaking adults living in the United States."
+    },
+    "benefitsTitle": "What it helps you do",
+    "benefit1": {
+      "title": "Help with every sound",
+      "text": "You get feedback on each sound, with a short spoken tip in Spanish."
+    },
+    "benefit2": {
+      "title": "See how it's done",
+      "text": "Animations show where to put your tongue and lips."
+    },
+    "benefit3": {
+      "title": "No reading needed",
+      "text": "You use it by listening and speaking."
+    },
+    "stepsTitle": "How it works",
+    "step1": {
+      "title": "Listen",
+      "text": "Hear how it is said correctly."
+    },
+    "step2": {
+      "title": "Repeat",
+      "text": "Say it out loud."
+    },
+    "step3": {
+      "title": "Improve",
+      "text": "See what to fix and try again."
+    },
+    "screenshotsTitle": "What it looks like",
+    "screenshot": "App screenshot",
+    "pricingTeaser": "Start free. Premium is US$ {price} per month.",
+    "pricingLink": "See pricing",
+    "install": "Works in your browser, and you can install it on your phone."
+  },
+  "pricing": {
+    "title": "Pricing",
+    "freeName": "Free",
+    "freeText": "The first lessons are free. No card needed.",
+    "premiumName": "Premium",
+    "premiumPrice": "US$ {price} per month",
+    "premiumText": "All lessons. Cancel anytime.",
+    "payments": "Payments are processed by Polar, our merchant of record. Polar also collects and pays sales tax.",
+    "renewal": "Your subscription renews every month until you cancel.",
+    "refundsLink": "Full refund in the first 14 days",
+    "termsLink": "Terms of service"
+  },
+  "contact": {
+    "title": "Contact",
+    "email": "Email us at {supportEmail}. We reply within 2 business days.",
+    "operator": "digiworlds is operated by {operatorName}, an individual based in Colombia.",
+    "moreTitle": "Common requests",
+    "refundsLink": "Refunds",
+    "privacyLink": "Privacy and data deletion"
+  },
+  "terms": {
+    "title": "Terms of service",
+    "intro": "These rules explain how digiworlds works. We wrote them in plain words. By using the service, you accept these terms.",
+    "sections": [
+      {
+        "heading": "1. Who we are",
+        "paragraphs": [
+          "digiworlds is operated by {operatorName}, an individual based in Colombia.",
+          "You can write to us at {supportEmail}."
+        ]
+      },
+      {
+        "heading": "2. Adults only",
+        "paragraphs": [
+          "You must be 18 or older to use digiworlds."
+        ]
+      },
+      {
+        "heading": "3. The service",
+        "paragraphs": [
+          "digiworlds is a digital service for practicing English pronunciation. It is delivered online.",
+          "It is not a school and it does not give certificates."
+        ]
+      },
+      {
+        "heading": "4. No guaranteed results",
+        "paragraphs": [
+          "We do not promise that you will reach a specific English level. Your progress depends on how much you practice."
+        ]
+      },
+      {
+        "heading": "5. Plans and payments",
+        "paragraphs": [
+          "There is a free plan and a Premium plan at US$ {price} per month.",
+          "Payments are processed by Polar, our merchant of record. Polar also collects and pays sales tax.",
+          "Polar's checkout terms also apply to your purchase."
+        ]
+      },
+      {
+        "heading": "6. Auto-renewal",
+        "paragraphs": [
+          "Premium renews every month until you cancel."
+        ]
+      },
+      {
+        "heading": "7. Cancellation",
+        "paragraphs": [
+          "You can cancel anytime. Use \"Manage subscription\" in the app (Polar's customer portal) or email us at {supportEmail}.",
+          "You keep access until the end of the period you already paid for."
+        ]
+      },
+      {
+        "heading": "8. Refunds",
+        "paragraphs": [
+          "You get a full refund in the first 14 days from your first payment. The details are in the refund policy."
+        ],
+        "link": "refunds"
+      },
+      {
+        "heading": "9. Acceptable use",
+        "paragraphs": [
+          "Use digiworlds for yourself only.",
+          "Do not share your account with other people and do not abuse the service."
+        ]
+      },
+      {
+        "heading": "10. Changes",
+        "paragraphs": [
+          "We may update these terms. We will always show the date of the last update.",
+          "If a change is important, we will tell you by email."
+        ]
+      },
+      {
+        "heading": "11. Governing law",
+        "paragraphs": [
+          "These terms are governed by the laws of Colombia."
+        ]
+      },
+      {
+        "heading": "12. Language",
+        "paragraphs": [
+          "These terms exist in Spanish and English. If they differ, the Spanish version prevails."
+        ]
+      }
+    ]
+  },
+  "refunds": {
+    "title": "Refund policy",
+    "intro": "This is how refunds work.",
+    "sections": [
+      {
+        "heading": "Full refund in the first 14 days",
+        "paragraphs": [
+          "If you ask for a refund within 14 days of your first payment, we give you everything back.",
+          "Email {supportEmail} with the email address of your account."
+        ]
+      },
+      {
+        "heading": "After 14 days",
+        "paragraphs": [
+          "After the first 14 days there is no refund for the current period.",
+          "You can cancel to stop the next renewal. You keep access until the end of the period you already paid for."
+        ]
+      },
+      {
+        "heading": "How the refund is paid",
+        "paragraphs": [
+          "Refunds are issued through Polar, to the original payment method.",
+          "Your bank may take several days to show it."
+        ]
+      },
+      {
+        "heading": "Language",
+        "paragraphs": [
+          "This policy exists in Spanish and English. If they differ, the Spanish version prevails."
+        ]
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Privacy policy",
+    "intro": "Here we explain what data we use, why, and who we share it with.",
+    "sections": [
+      {
+        "heading": "1. Who is responsible",
+        "paragraphs": [
+          "{operatorName}, Colombia. Email: {supportEmail}."
+        ]
+      },
+      {
+        "heading": "2. Data we collect",
+        "paragraphs": [
+          "We collect this data:"
+        ],
+        "items": [
+          "Your account email and name, including when you sign in with \"Continue with Google\".",
+          "Your learning progress and pronunciation scores.",
+          "Your notification subscription, if you allow reminders.",
+          "Basic technical data we need for bot protection."
+        ]
+      },
+      {
+        "heading": "3. Your voice",
+        "paragraphs": [
+          "Your voice is sent to Microsoft Azure to score your pronunciation and is then discarded.",
+          "It is only stored if you turn on \"Save my recordings\". That option is off by default. Stored recordings are kept in Cloudflare R2.",
+          "The spoken tips in Spanish are pre-generated by Azure and never use your voice."
+        ]
+      },
+      {
+        "heading": "4. Why we use your data",
+        "paragraphs": [
+          "We use it to:"
+        ],
+        "items": [
+          "Run the service and show your progress.",
+          "Send you sign-in links and reminders.",
+          "Handle payments and support.",
+          "Protect against bots.",
+          "Measure our ads."
+        ]
+      },
+      {
+        "heading": "5. Providers we use",
+        "paragraphs": [
+          "These companies help us run the service:"
+        ],
+        "items": [
+          "Supabase: accounts and progress data.",
+          "Microsoft Azure Speech: pronunciation scoring and spoken tips.",
+          "Vercel: app hosting.",
+          "Polar: payments, sales tax and the subscription portal.",
+          "Cloudflare: DNS, this website and its cookieless statistics, R2 storage (app audio and saved recordings), and Turnstile (bot protection).",
+          "Google: \"Continue with Google\" sign-in.",
+          "An email provider (for example, Resend): sign-in links.",
+          "Browser push services (Apple, Google, Mozilla): reminders.",
+          "Meta and TikTok: ad measurement (pixels and server events). They only receive events such as visit, sign-up, payment and purchase. They never receive audio, scores or sounds."
+        ]
+      },
+      {
+        "heading": "6. We do not sell your data",
+        "paragraphs": [
+          "We do not sell your data for money.",
+          "Sharing ad events with Meta and TikTok may count as \"sharing\" under some US state laws. You can opt out with the \"Do not sell or share my personal information\" link, or with your browser's Global Privacy Control signal."
+        ]
+      },
+      {
+        "heading": "7. Cookies",
+        "paragraphs": [
+          "We use these cookies. We do not use product analytics such as Google Analytics."
+        ],
+        "items": [
+          "Sign-in session cookies (needed).",
+          "Turnstile cookies (bot protection).",
+          "Meta and TikTok ad cookies (turned off by the opt-out above or by GPC)."
+        ]
+      },
+      {
+        "heading": "8. Cancelling",
+        "paragraphs": [
+          "You can cancel from \"Manage subscription\" in the app, which opens Polar's customer portal, or by email."
+        ]
+      },
+      {
+        "heading": "9. Deleting your data",
+        "paragraphs": [
+          "Email {supportEmail} and we delete your account, your progress and any saved recordings."
+        ]
+      },
+      {
+        "heading": "10. Minors",
+        "paragraphs": [
+          "The service is for adults 18 or older only."
+        ]
+      },
+      {
+        "heading": "11. Changes and language",
+        "paragraphs": [
+          "We may update this policy. We will always show the date of the last update.",
+          "This policy exists in Spanish and English. If they differ, the Spanish version prevails."
+        ]
+      }
+    ]
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "This page does not exist or has moved.",
+    "homeLink": "Go to the home page"
+  }
+}

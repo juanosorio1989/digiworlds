@@ -1,0 +1,22 @@
+---
+import { pageKeys, pathFor } from '../i18n/routes.ts';
+import type { Lang, PageKey } from '../i18n/routes.ts';
+import { t, tHtml } from '../i18n/t.ts';
+import LangSwitch from './LangSwitch.astro';
+interface Props { lang: Lang; page: PageKey | 'notFound' }
+const { lang, page } = Astro.props;
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <nav aria-label={t(lang, 'aria.footerNav')}>
+      <ul class="footer-links">
+        {pageKeys.map((k) => (
+          <li><a href={pathFor(k, lang)}>{t(lang, `nav.${k}`)}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <p class="footer-row" set:html={tHtml(lang, 'footer.email')} />
+    <p class="footer-row"><LangSwitch lang={lang} page={page} /></p>
+    <p class="footer-copy">{t(lang, 'footer.copy')}</p>
+  </div>
+</footer>

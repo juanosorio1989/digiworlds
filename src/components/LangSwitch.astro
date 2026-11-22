@@ -1,0 +1,9 @@
+---
+import { pathFor, otherLang } from '../i18n/routes.ts';
+import type { Lang, PageKey } from '../i18n/routes.ts';
+import { t } from '../i18n/t.ts';
+interface Props { lang: Lang; page: PageKey | 'notFound' }
+const { lang, page } = Astro.props;
+const other = otherLang(lang);
+---
+<a class="lang-switch" href={pathFor(page === 'notFound' ? 'home' : page, other)} hreflang={other} lang={other} data-lang-switch>{t(lang, 'switch.label')}</a>

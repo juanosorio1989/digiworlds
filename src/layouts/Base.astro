@@ -1,0 +1,43 @@
+---
+import '../styles/global.css';
+import { absoluteUrl, alternates, otherLang, pathFor } from '../i18n/routes.ts';
+import type { Lang, PageKey } from '../i18n/routes.ts';
+import { t } from '../i18n/t.ts';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+interface Props { lang: Lang; page: PageKey | 'notFound' }
+const { lang, page } = Astro.props;
+const title = t(lang, `meta.${page}.title`);
+const description = t(lang, `meta.${page}.description`);
+const isNotFound = page === 'notFound';
+const url = isNotFound ? '' : absoluteUrl(pathFor(page, lang));
+const locale = (l: Lang) => (l === 'es' ? 'es_US' : 'en_US');
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {isNotFound && <meta name="robots" content="noindex" />}
+    {!isNotFound && <link rel="canonical" href={url} />}
+    {!isNotFound && alternates(page).map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {!isNotFound && <meta property="og:url" content={url} />}
+    <meta property="og:image" content={absoluteUrl(`/og/og-${lang}.png`)} />
+    <meta property="og:locale" content={locale(lang)} />
+    <meta property="og:locale:alternate" content={locale(otherLang(lang))} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{t(lang, 'skip')}</a>
+    <Header lang={lang} page={page} />
+    <main id="main"><slot /></main>
+    <Footer lang={lang} page={page} />
+  </body>
+</html>

@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaButton from '../components/CtaButton.astro';
+import { pathFor } from '../i18n/routes.ts';
+import type { Lang } from '../i18n/routes.ts';
+import { t } from '../i18n/t.ts';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+---
+<Base lang={lang} page="pricing">
+  <section class="section" aria-labelledby="pricing-title">
+    <div class="wrap">
+      <h1 id="pricing-title">{t(lang, 'pricing.title')}</h1>
+      <ul class="grid two">
+        <li class="card plan">
+          <h2>{t(lang, 'pricing.freeName')}</h2>
+          <p>{t(lang, 'pricing.freeText')}</p>
+        </li>
+        <li class="card plan">
+          <h2>{t(lang, 'pricing.premiumName')}</h2>
+          <p class="price">{t(lang, 'pricing.premiumPrice')}</p>
+          <p>{t(lang, 'pricing.premiumText')}</p>
+        </li>
+      </ul>
+      <p class="note">{t(lang, 'pricing.payments')}</p>
+      <p class="note">{t(lang, 'pricing.renewal')}</p>
+      <ul class="link-list">
+        <li><a href={pathFor('refunds', lang)}>{t(lang, 'pricing.refundsLink')}</a></li>
+        <li><a href={pathFor('terms', lang)}>{t(lang, 'pricing.termsLink')}</a></li>
+      </ul>
+      <CtaButton lang={lang} />
+    </div>
+  </section>
+</Base>

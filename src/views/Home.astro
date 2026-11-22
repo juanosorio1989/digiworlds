@@ -1,0 +1,69 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaButton from '../components/CtaButton.astro';
+import ScreenshotPlaceholder from '../components/ScreenshotPlaceholder.astro';
+import { pathFor } from '../i18n/routes.ts';
+import type { Lang } from '../i18n/routes.ts';
+import { t } from '../i18n/t.ts';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const benefits = ['benefit1', 'benefit2', 'benefit3'];
+const steps = ['step1', 'step2', 'step3'];
+---
+<Base lang={lang} page="home">
+  <section class="hero">
+    <div class="wrap">
+      <h1>{t(lang, 'home.hero.title')}</h1>
+      <p>{t(lang, 'home.hero.text')}</p>
+      <p class="audience">{t(lang, 'home.hero.audience')}</p>
+      <CtaButton lang={lang} />
+    </div>
+  </section>
+
+  <section class="section alt" aria-labelledby="benefits-title">
+    <div class="wrap">
+      <h2 id="benefits-title">{t(lang, 'home.benefitsTitle')}</h2>
+      <ul class="grid three">
+        {benefits.map((b) => (
+          <li class="card">
+            <h3>{t(lang, `home.${b}.title`)}</h3>
+            <p>{t(lang, `home.${b}.text`)}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="steps-title">
+    <div class="wrap">
+      <h2 id="steps-title">{t(lang, 'home.stepsTitle')}</h2>
+      <ol class="grid three">
+        {steps.map((s, i) => (
+          <li class="card">
+            <span class="step-num" aria-hidden="true">{i + 1}</span>
+            <h3>{t(lang, `home.${s}.title`)}</h3>
+            <p>{t(lang, `home.${s}.text`)}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section alt" aria-labelledby="screens-title">
+    <div class="wrap">
+      <h2 id="screens-title">{t(lang, 'home.screenshotsTitle')}</h2>
+      <ul class="screens">
+        {[0, 1, 2].map(() => <li><ScreenshotPlaceholder lang={lang} /></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section teaser">
+    <div class="wrap">
+      <p>{t(lang, 'home.pricingTeaser')}</p>
+      <p><a href={pathFor('pricing', lang)}>{t(lang, 'home.pricingLink')}</a></p>
+      <p>{t(lang, 'home.install')}</p>
+      <CtaButton lang={lang} />
+    </div>
+  </section>
+</Base>
