@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../config/site.ts';
+import { pathFor } from '../i18n/routes.ts';
+import type { Lang } from '../i18n/routes.ts';
+import { t, tHtml } from '../i18n/t.ts';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const mailLink = `<a href="mailto:${site.supportEmail}">${site.supportEmail}</a>`;
+const emailHtml = tHtml(lang, 'contact.email').replace(site.supportEmail, mailLink);
+const operatorHtml = tHtml(lang, 'contact.operator');
+---
+<Base lang={lang} page="contact">
+  <section class="section" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h1 id="contact-title">{t(lang, 'contact.title')}</h1>
+      <p class="note" set:html={emailHtml} />
+      <p class="note" set:html={operatorHtml} />
+      <h2>{t(lang, 'contact.moreTitle')}</h2>
+      <ul class="link-list">
+        <li><a href={pathFor('refunds', lang)}>{t(lang, 'contact.refundsLink')}</a></li>
+        <li><a href={pathFor('privacy', lang)}>{t(lang, 'contact.privacyLink')}</a></li>
+      </ul>
+    </div>
+  </section>
+</Base>

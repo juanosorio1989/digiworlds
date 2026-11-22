@@ -34,6 +34,14 @@
     "home": {
       "title": "digiworlds — Improve your English pronunciation",
       "description": "Practice American English pronunciation on your phone, with help in Spanish. For Spanish-speaking adults living in the United States."
+    },
+    "pricing": {
+      "title": "Pricing — digiworlds",
+      "description": "Start free. Premium is US$ {price} per month and you can cancel anytime."
+    },
+    "contact": {
+      "title": "Contact — digiworlds",
+      "description": "Email us at {supportEmail}. We reply within 2 business days."
     }
   },
   "home": {
@@ -73,5 +81,25 @@
     "pricingTeaser": "Start free. Premium is US$ {price} per month.",
     "pricingLink": "See pricing",
     "install": "Works in your browser, and you can install it on your phone."
+  },
+  "pricing": {
+    "title": "Pricing",
+    "freeName": "Free",
+    "freeText": "The first lessons are free. No card needed.",
+    "premiumName": "Premium",
+    "premiumPrice": "US$ {price} per month",
+    "premiumText": "All lessons. Cancel anytime.",
+    "payments": "Payments are processed by Polar, our merchant of record. Polar also collects and pays sales tax.",
+    "renewal": "Your subscription renews every month until you cancel.",
+    "refundsLink": "Full refund in the first 14 days",
+    "termsLink": "Terms of service"
+  },
+  "contact": {
+    "title": "Contact",
+    "email": "Email us at {supportEmail}. We reply within 2 business days.",
+    "operator": "digiworlds is operated by {operatorName}, an individual based in Colombia.",
+    "moreTitle": "Common requests",
+    "refundsLink": "Refunds",
+    "privacyLink": "Privacy and data deletion"
   }
 }

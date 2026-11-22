@@ -34,6 +34,14 @@
     "home": {
       "title": "digiworlds — Mejora tu pronunciación en inglés",
       "description": "Practica la pronunciación del inglés americano desde tu celular, con ayuda en español. Para adultos hispanohablantes que viven en Estados Unidos."
+    },
+    "pricing": {
+      "title": "Precios — digiworlds",
+      "description": "Empieza gratis. Premium cuesta US$ {price} al mes y puedes cancelar cuando quieras."
+    },
+    "contact": {
+      "title": "Contacto — digiworlds",
+      "description": "Escríbenos a {supportEmail}. Respondemos en un máximo de 2 días hábiles."
     }
   },
   "home": {
@@ -73,5 +81,25 @@
     "pricingTeaser": "Empieza gratis. Premium cuesta US$ {price} al mes.",
     "pricingLink": "Ver precios",
     "install": "Funciona en el navegador y puedes instalarla en tu celular."
+  },
+  "pricing": {
+    "title": "Precios",
+    "freeName": "Gratis",
+    "freeText": "Las primeras lecciones son gratis. No necesitas tarjeta.",
+    "premiumName": "Premium",
+    "premiumPrice": "US$ {price} al mes",
+    "premiumText": "Todas las lecciones. Cancela cuando quieras.",
+    "payments": "Los pagos los procesa Polar, nuestro comerciante registrado (merchant of record). Polar también cobra y paga los impuestos sobre las ventas.",
+    "renewal": "La suscripción se renueva cada mes hasta que la canceles.",
+    "refundsLink": "Reembolso completo en los primeros 14 días",
+    "termsLink": "Términos del servicio"
+  },
+  "contact": {
+    "title": "Contacto",
+    "email": "Escríbenos a {supportEmail}. Respondemos en un máximo de 2 días hábiles.",
+    "operator": "digiworlds es operado por {operatorName}, una persona natural con sede en Colombia.",
+    "moreTitle": "Solicitudes comunes",
+    "refundsLink": "Reembolsos",
+    "privacyLink": "Privacidad y eliminación de datos"
   }
 }
