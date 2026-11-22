@@ -16,7 +16,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { font-size: 18px; -webkit-text-size-adjust: 100%; }
+html { font-size: 112.5%; -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
@@ -63,7 +63,7 @@ a:hover { color: var(--brand-dark); }
 .wordmark { font-size: 1.35rem; font-weight: 700; color: var(--text); text-decoration: none; display: inline-flex; align-items: center; min-height: 48px; }
 
 .nav-list, .footer-links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 0.25rem; }
-.nav-list a, .footer-links a, .lang-switch, .site-footer .mail {
+.nav-list a, .footer-links a, .lang-switch, .footer-row a {
   display: inline-flex;
   align-items: center;
   min-height: 48px;
@@ -142,11 +142,11 @@ main { display: block; }
 
 mark.placeholder { background: var(--mark-bg); color: var(--text); padding: 0 0.2em; }
 
-@media (max-width: 599px) {
+@media (max-width: 37.49rem) {
   .nav-page { display: none; }
 }
 
-@media (min-width: 40rem) {
+@media (min-width: 37.5rem) {
   h1 { font-size: 2.75rem; }
   .grid.three { grid-template-columns: repeat(3, 1fr); }
   .grid.two { grid-template-columns: repeat(2, 1fr); }

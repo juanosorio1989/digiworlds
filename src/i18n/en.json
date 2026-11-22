@@ -25,7 +25,7 @@
   },
   "footer": {
     "copy": "© {year} digiworlds",
-    "email": "Email us"
+    "email": "Email us: {supportEmail}"
   },
   "legal": {
     "updated": "Last updated: {date}"
@@ -82,7 +82,7 @@
     "stepsTitle": "How it works",
     "step1": {
       "title": "Listen",
-      "text": "Hear how the model sounds."
+      "text": "Hear how it is said correctly."
     },
     "step2": {
       "title": "Repeat",

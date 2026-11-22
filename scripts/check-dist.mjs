@@ -3,6 +3,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { site } from '../src/config/site.ts';
+import { isPlaceholder } from '../src/i18n/t.ts';
 import { routes, pageKeys, langs, pathFor, otherLang, absoluteUrl, alternates } from '../src/i18n/routes.ts';
 
 // Build output shape (format: 'file'): / -> index.html, /en -> en.html, /x/y -> x/y.html
@@ -56,7 +57,10 @@ function checkPage(html, key, lang, errors, warnings) {
   const switches = anchors.filter((a) => 'data-lang-switch' in a);
   const want = pathFor(key, otherLang(lang));
   if (switches.length !== 2) err(`expected 2 [data-lang-switch] links, found ${switches.length}`);
-  for (const s of switches) if (s.href !== want) err(`lang switch href is ${s.href}, expected ${want}`);
+  for (const s of switches) {
+    if (s.href !== want) err(`lang switch href is ${s.href}, expected ${want}`);
+    if (s.lang !== otherLang(lang) || s.hreflang !== otherLang(lang)) err(`lang switch needs lang and hreflang "${otherLang(lang)}"`);
+  }
 
   const wantLabel = lang === 'es' ? 'English' : 'Español';
   for (const m of html.matchAll(/<a\s[^>]*data-lang-switch[^>]*>([\s\S]*?)<\/a>/gi)) {
@@ -144,6 +148,9 @@ function checkNotFound(distDir, lang, errors) {
 export function checkDist(distDir = 'dist') {
   const errors = [];
   const warnings = [];
+  for (const k of ['supportEmail', 'operatorName']) {
+    if (isPlaceholder(site[k])) warnings.push(`site.${k} is still a placeholder ("${site[k]}")`);
+  }
   for (const key of pageKeys) {
     for (const lang of langs) {
       const file = join(distDir, distFileFor(routes[key][lang]));

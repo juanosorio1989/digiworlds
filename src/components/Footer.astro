@@ -1,8 +1,7 @@
 ---
 import { pageKeys, pathFor } from '../i18n/routes.ts';
 import type { Lang, PageKey } from '../i18n/routes.ts';
-import { site } from '../config/site.ts';
-import { t } from '../i18n/t.ts';
+import { t, tHtml } from '../i18n/t.ts';
 import LangSwitch from './LangSwitch.astro';
 interface Props { lang: Lang; page: PageKey | 'notFound' }
 const { lang, page } = Astro.props;
@@ -16,7 +15,7 @@ const { lang, page } = Astro.props;
         ))}
       </ul>
     </nav>
-    <p class="footer-row"><a class="mail" href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a></p>
+    <p class="footer-row" set:html={tHtml(lang, 'footer.email')} />
     <p class="footer-row"><LangSwitch lang={lang} page={page} /></p>
     <p class="footer-copy">{t(lang, 'footer.copy')}</p>
   </div>
