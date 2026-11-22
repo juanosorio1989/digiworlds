@@ -164,6 +164,8 @@ The section outline for each page and the copy in both languages are in the
 **Footer on every page:** links to all 6 pages in the current language, the support
 email, the language switcher and "© 2026 digiworlds".
 
+404 pages (ES `/404`, EN `/en/404`): noindex, not in sitemap — plumbing, not content (controller ruling R8).
+
 **Screenshot placeholders:** neutral phone-shaped boxes with a visible label from
 the copy files ("Captura de pantalla de la app" / "App screenshot") and matching alt
 text. They are honest placeholders, not fake UI. They get replaced by images in

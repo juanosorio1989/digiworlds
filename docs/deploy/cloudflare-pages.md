@@ -46,6 +46,8 @@ Checked with `npx wrangler pages dev dist --port 8788` on 2026-11-22:
 | `/precios.html` | `HTTP/1.1 308 Permanent Redirect`, `Location: /precios` |
 | `/en` | `HTTP/1.1 200 OK` |
 | `/en/` | `HTTP/1.1 308 Permanent Redirect`, `Location: /en` |
+| `/nope` | `HTTP/1.1 404 Not Found` (Spanish page, `dist/404.html`) |
+| `/en/nope` | `HTTP/1.1 404 Not Found` (English page, `dist/en/404.html`) |
 
 ## Owner checkpoint after the first deploy
 
@@ -55,6 +57,7 @@ Run these against the real site and confirm:
 curl -sI https://digiworlds.store/precios.html     # expect 308 to /precios
 curl -sI https://digiworlds.store/en/              # record what happens (local test gave 308 to /en)
 curl -sI https://www.digiworlds.store/precios      # expect 301 to https://digiworlds.store/precios
+curl -sI https://digiworlds.store/nope             # 404 pages: expect 404 with the Spanish page
 ```
 
 Then run a Lighthouse mobile test on `https://digiworlds.store/`.

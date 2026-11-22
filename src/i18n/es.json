@@ -54,6 +54,10 @@
     "privacy": {
       "title": "Política de privacidad — digiworlds",
       "description": "Qué datos usamos, para qué, con qué proveedores y cómo puedes pedir que los borremos."
+    },
+    "notFound": {
+      "title": "Página no encontrada — digiworlds",
+      "description": "Esta página no existe o cambió de dirección."
     }
   },
   "home": {
@@ -337,5 +341,10 @@
         ]
       }
     ]
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "text": "Esta página no existe o cambió de dirección.",
+    "homeLink": "Ir al inicio"
   }
 }

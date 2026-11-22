@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import { pathFor } from '../i18n/routes.ts';
+import type { Lang } from '../i18n/routes.ts';
+import { t } from '../i18n/t.ts';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+---
+<Base lang={lang} page="notFound">
+  <section class="section" aria-labelledby="notfound-title">
+    <div class="wrap">
+      <h1 id="notfound-title">{t(lang, 'notFound.title')}</h1>
+      <p>{t(lang, 'notFound.text')}</p>
+      <p><a href={pathFor('home', lang)}>{t(lang, 'notFound.homeLink')}</a></p>
+    </div>
+  </section>
+</Base>

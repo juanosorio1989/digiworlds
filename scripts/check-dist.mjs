@@ -121,6 +121,26 @@ function checkSeoFiles(distDir, errors) {
   }
 }
 
+function checkNotFound(distDir, lang, errors) {
+  const rel = lang === 'es' ? '404.html' : 'en/404.html';
+  const where = `${lang}:404 (${rel})`;
+  const file = join(distDir, rel);
+  if (!existsSync(file)) { errors.push(`${where}: ${file} is missing`); return; }
+  const html = readFileSync(file, 'utf8');
+  const htmlTag = tagsOf(html, 'html')[0];
+  if (!htmlTag || parseAttrs(htmlTag).lang !== lang) errors.push(`${where}: <html lang> is not "${lang}"`);
+  const robots = tagsOf(html, 'meta').map(parseAttrs).find((a) => a.name === 'robots');
+  if (!robots || !robots.content?.includes('noindex')) errors.push(`${where}: missing noindex`);
+  if (tagsOf(html, 'link').map(parseAttrs).some((a) => a.rel === 'canonical')) errors.push(`${where}: must not have rel="canonical"`);
+  const switches = tagsOf(html, 'a').map(parseAttrs).filter((a) => 'data-lang-switch' in a);
+  const want = pathFor('home', otherLang(lang));
+  for (const s of switches) {
+    if (s.href !== want) errors.push(`${where}: lang switch href is ${s.href}, expected ${want}`);
+    if (s.lang !== otherLang(lang) || s.hreflang !== otherLang(lang)) errors.push(`${where}: lang switch needs lang and hreflang "${otherLang(lang)}"`);
+  }
+  if (switches.length !== 2) errors.push(`${where}: expected 2 [data-lang-switch] links, found ${switches.length}`);
+}
+
 export function checkDist(distDir = 'dist') {
   const errors = [];
   const warnings = [];
@@ -141,6 +161,7 @@ export function checkDist(distDir = 'dist') {
     if (es !== en) errors.push(`${key}: <h2> count differs (es ${es}, en ${en})`);
   }
   if (!existsSync(join(distDir, distFileFor('/')))) errors.push('dist/index.html is missing');
+  for (const lang of langs) checkNotFound(distDir, lang, errors);
   checkSeoFiles(distDir, errors);
   return { errors, warnings };
 }

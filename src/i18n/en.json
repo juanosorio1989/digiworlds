@@ -54,6 +54,10 @@
     "privacy": {
       "title": "Privacy policy — digiworlds",
       "description": "What data we use, why, which providers we use and how you can ask us to delete it."
+    },
+    "notFound": {
+      "title": "Page not found — digiworlds",
+      "description": "This page does not exist or has moved."
     }
   },
   "home": {
@@ -337,5 +341,10 @@
         ]
       }
     ]
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "This page does not exist or has moved.",
+    "homeLink": "Go to the home page"
   }
 }
