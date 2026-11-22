@@ -6,6 +6,6 @@
 - Routes: `src/i18n/routes.ts`. Spanish at `/`, English under `/en`.
 - `npm run check` = astro check + unit tests + build + `scripts/check-dist.mjs`. Run it before every commit.
 - Spanish prevails over English in legal text.
-- No ad pixels or third-party scripts on this site (they live only in the app).
+- No ad pixels or tracking scripts in the source. The only third-party script is the Cloudflare Web Analytics beacon, injected by Pages.
 - Email `info@digiworlds.store` runs on Hostinger Mail. Never change its DNS records or enable Cloudflare Email Routing.
 - Docs: `docs/deploy/` (deploy, DNS, editing), `docs/superpowers/` (specs and plans).

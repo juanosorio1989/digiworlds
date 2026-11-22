@@ -2,7 +2,7 @@
 
 ## Where things live
 
-- Copy (all text, both languages): `src/i18n/es.json` and `src/i18n/en.json`. Keep both files in step. The build fails if a key is missing in one.
+- Copy (all text, both languages): `src/i18n/es.json` and `src/i18n/en.json`. Keep both files in step. `npm run check` fails if a key is missing in one.
 - Values: `src/config/site.ts` has `operatorName`, `supportEmail`, `premiumPriceUsd`, `showLaunchLabel` (the "Muy pronto" / "Coming soon" label), the app and site URLs.
 - Spanish prevails over English in the legal pages.
 
@@ -32,7 +32,7 @@ After changing the hero copy (`home.hero.*`) or the brand colors, run `node scri
 ## Before requesting the Polar review
 
 - [ ] Launch flag off (`showLaunchLabel: false`) and the app's free lessons work.
-- [ ] `operatorName` filled in (no placeholder warnings in `npm run check`).
+- [ ] `operatorName` and `supportEmail` filled in (no placeholder warnings in `npm run check`).
 - [ ] Each privacy and terms promise compared with what the real app does.
 - [ ] Legal review done (voice data, US state biometric laws).
 - [ ] The Polar product price is 9.99, matching `premiumPriceUsd`.

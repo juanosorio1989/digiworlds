@@ -1,6 +1,6 @@
 # Cloudflare Pages
 
-Dashboard labels were checked against today's UI (2026-11-22). They may change.
+Dashboard labels are described as of 2026-11-22 and were not checked against the live UI. They may change.
 
 ## 1. Create the project
 
@@ -14,6 +14,7 @@ Dashboard labels were checked against today's UI (2026-11-22). They may change.
 
 1. In the project: Custom domains → add `digiworlds.store`, then `www.digiworlds.store`.
 2. Pages replaces the old apex A/AAAA records and the `www` record. It asks for confirmation. Confirm.
+   If it refuses because a record already exists, delete only the apex A, the apex AAAA and the `www` CNAME in DNS, then add the domain again. Never delete MX/TXT/DKIM/autoconfig/autodiscover records.
 3. Do not touch any email record. See [dns.md](dns.md).
 
 ## 3. HTTPS

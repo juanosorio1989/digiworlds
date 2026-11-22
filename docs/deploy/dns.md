@@ -11,7 +11,7 @@ The domain is registered at Hostinger. Its nameservers are on Cloudflare (zone `
 | `ftp` A `82.25.83.67` (DNS only) | Hostinger leftover, exposes the origin IP | Delete by hand once the Hostinger site is retired |
 | MX `mx1` and `mx2.hostinger.com` | Hostinger Mail | Never change |
 | SPF TXT | Hostinger Mail | Never change |
-| DKIM CNAME x3 | Hostinger Mail | Never change |
+| DKIM CNAME x3: `hostingermail-a._domainkey`, `hostingermail-b._domainkey`, `hostingermail-c._domainkey` | Hostinger Mail | Never change |
 | DMARC TXT | Hostinger Mail | Never change |
 | autoconfig, autodiscover CNAME | Hostinger Mail | Never change |
 
