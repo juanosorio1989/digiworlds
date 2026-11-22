@@ -54,6 +54,11 @@ function checkPage(html, key, lang, errors, warnings) {
   if (switches.length !== 2) err(`expected 2 [data-lang-switch] links, found ${switches.length}`);
   for (const s of switches) if (s.href !== want) err(`lang switch href is ${s.href}, expected ${want}`);
 
+  const wantLabel = lang === 'es' ? 'English' : 'Español';
+  for (const m of html.matchAll(/<a\s[^>]*data-lang-switch[^>]*>([\s\S]*?)<\/a>/gi)) {
+    if (m[1].trim() !== wantLabel) err(`lang switch text is "${m[1].trim()}", expected "${wantLabel}"`);
+  }
+
   const h1 = (html.match(/<h1[\s>]/gi) ?? []).length;
   if (h1 !== 1) err(`expected 1 <h1>, found ${h1}`);
 

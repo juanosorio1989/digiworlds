@@ -30,9 +30,9 @@ body {
 img, svg { max-width: 100%; height: auto; }
 
 h1, h2, h3, p, li, a, span { overflow-wrap: anywhere; }
-h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 var(--gap); }
-h2 { font-size: 1.5rem; line-height: 1.3; margin: 0 0 var(--gap); }
-h3 { font-size: 1.15rem; line-height: 1.3; margin: 0 0 0.25rem; }
+h1 { font-size: 2.25rem; line-height: 1.2; margin: 0 0 var(--gap); }
+h2 { font-size: 1.75rem; line-height: 1.3; margin: 0 0 var(--gap); }
+h3 { font-size: 1.5rem; line-height: 1.3; margin: 0 0 0.25rem; }
 p { margin: 0 0 var(--gap); }
 
 a { color: var(--brand); text-underline-offset: 0.15em; }
@@ -137,8 +137,12 @@ main { display: block; }
 
 mark.placeholder { background: var(--mark-bg); color: var(--text); padding: 0 0.2em; }
 
+@media (max-width: 599px) {
+  .nav-page { display: none; }
+}
+
 @media (min-width: 40rem) {
-  h1 { font-size: 2.5rem; }
+  h1 { font-size: 2.75rem; }
   .grid.three { grid-template-columns: repeat(3, 1fr); }
   .screens { grid-template-columns: repeat(3, 1fr); }
 }

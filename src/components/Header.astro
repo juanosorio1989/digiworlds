@@ -13,7 +13,7 @@ const navKeys = pageKeys.filter((k) => k !== 'home');
     <nav aria-label={t(lang, 'aria.mainNav')}>
       <ul class="nav-list">
         {navKeys.map((k) => (
-          <li><a href={pathFor(k, lang)} aria-current={k === page ? 'page' : undefined}>{t(lang, `nav.${k}`)}</a></li>
+          <li class="nav-page"><a href={pathFor(k, lang)} aria-current={k === page ? 'page' : undefined}>{t(lang, `nav.${k}`)}</a></li>
         ))}
         <li><LangSwitch lang={lang} page={page} /></li>
       </ul>
