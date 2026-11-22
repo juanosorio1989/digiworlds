@@ -1,6 +1,6 @@
 # digiworlds.store sales site — design
 
-Date: 2026-11-21 · Status: awaiting owner approval
+Date: 2026-11-21 · Status: approved 2026-11-22
 Page copy outline: [2026-11-21-sales-site-content.md](2026-11-21-sales-site-content.md)
 
 ## 1. Intent
@@ -278,8 +278,9 @@ Legal pages are a plain-language starting point. The owner will have them review
 - **CTA while the launch label is on:** stays a live link to `{appUrl}` with the
   badge beside it, as the owner specified. The owner requests Polar review only
   after the flag is off (see §3).
-- **Cloud resources:** the owner creates the GitHub repo and the Pages project by
-  following the deploy guide. The builder never creates cloud resources. The builder
+- **Cloud resources:** the GitHub repo already exists
+  (`github.com/juanosorio1989/digiworlds`, cloned locally). The owner creates the
+  Pages project by following the deploy guide. The builder never creates cloud resources. The builder
   verifies clean URLs locally with `wrangler pages dev dist`, and the plan ends with
   an owner checkpoint to confirm redirects on the first real deploy.
 - **App facts in legal pages:** the plan includes an owner sign-off step. Before the
