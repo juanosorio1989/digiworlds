@@ -99,13 +99,38 @@ function checkPage(html, key, lang, errors, warnings) {
   }
 }
 
+function checkSeoFiles(distDir, errors) {
+  const sitemapFile = join(distDir, 'sitemap.xml');
+  if (!existsSync(sitemapFile)) errors.push('dist/sitemap.xml is missing');
+  else {
+    const xml = readFileSync(sitemapFile, 'utf8');
+    const locs = [...xml.matchAll(/<loc>([^<]*)<\/loc>/g)].map((m) => m[1]);
+    const expected = pageKeys.flatMap((k) => langs.map((l) => absoluteUrl(pathFor(k, l))));
+    if (locs.length !== expected.length) errors.push(`sitemap: expected ${expected.length} <loc>, found ${locs.length}`);
+    for (const u of expected) if (!locs.includes(u)) errors.push(`sitemap: missing <loc> ${u}`);
+    const xl = (xml.match(/<xhtml:link\s/g) ?? []).length;
+    if (xl !== expected.length * 3) errors.push(`sitemap: expected ${expected.length * 3} xhtml:link, found ${xl}`);
+  }
+  const robotsFile = join(distDir, 'robots.txt');
+  if (!existsSync(robotsFile)) errors.push('dist/robots.txt is missing');
+  else if (!readFileSync(robotsFile, 'utf8').includes(`Sitemap: ${absoluteUrl('/sitemap.xml')}`)) {
+    errors.push('robots.txt is missing the Sitemap line');
+  }
+  for (const f of ['favicon.svg', 'favicon.ico', 'apple-touch-icon.png', 'og/og-es.png', 'og/og-en.png']) {
+    if (!existsSync(join(distDir, f))) errors.push(`dist/${f} is missing`);
+  }
+}
+
 export function checkDist(distDir = 'dist') {
   const errors = [];
   const warnings = [];
   for (const key of pageKeys) {
     for (const lang of langs) {
       const file = join(distDir, distFileFor(routes[key][lang]));
-      if (!existsSync(file)) continue;
+      if (!existsSync(file)) {
+        errors.push(`${lang}:${key}: ${file} is missing`);
+        continue;
+      }
       checkPage(readFileSync(file, 'utf8'), key, lang, errors, warnings);
     }
   }
@@ -116,6 +141,7 @@ export function checkDist(distDir = 'dist') {
     if (es !== en) errors.push(`${key}: <h2> count differs (es ${es}, en ${en})`);
   }
   if (!existsSync(join(distDir, distFileFor('/')))) errors.push('dist/index.html is missing');
+  checkSeoFiles(distDir, errors);
   return { errors, warnings };
 }
 
