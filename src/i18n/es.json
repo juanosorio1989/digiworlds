@@ -6,5 +6,72 @@
     "refunds": "Reembolsos",
     "privacy": "Privacidad",
     "contact": "Contacto"
+  },
+  "brand": "digiworlds",
+  "switch": {
+    "label": "English"
+  },
+  "cta": {
+    "try": "Probar gratis"
+  },
+  "launch": {
+    "label": "Muy pronto"
+  },
+  "skip": "Saltar al contenido",
+  "aria": {
+    "mainNav": "Menú principal",
+    "footerNav": "Enlaces del sitio",
+    "home": "digiworlds, inicio"
+  },
+  "footer": {
+    "copy": "© {year} digiworlds",
+    "email": "Escríbenos"
+  },
+  "legal": {
+    "updated": "Última actualización: {date}"
+  },
+  "meta": {
+    "home": {
+      "title": "digiworlds — Mejora tu pronunciación en inglés",
+      "description": "Practica la pronunciación del inglés americano desde tu celular, con ayuda en español. Para adultos hispanohablantes que viven en Estados Unidos."
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Habla inglés con más confianza",
+      "text": "Practica la pronunciación del inglés americano desde tu celular. Escuchas, repites y recibes ayuda al instante, en español.",
+      "audience": "Para adultos hispanohablantes que viven en Estados Unidos."
+    },
+    "benefitsTitle": "Lo que te ayuda a lograr",
+    "benefit1": {
+      "title": "Ayuda en cada sonido",
+      "text": "Recibes una guía por cada sonido, con un consejo corto hablado en español."
+    },
+    "benefit2": {
+      "title": "Mira cómo se hace",
+      "text": "Las animaciones te muestran dónde poner la lengua y los labios."
+    },
+    "benefit3": {
+      "title": "No necesitas leer",
+      "text": "La usas escuchando y hablando."
+    },
+    "stepsTitle": "Cómo funciona",
+    "step1": {
+      "title": "Escucha",
+      "text": "Oye cómo suena el modelo."
+    },
+    "step2": {
+      "title": "Repite",
+      "text": "Dilo en voz alta."
+    },
+    "step3": {
+      "title": "Mejora",
+      "text": "Mira qué corregir e inténtalo otra vez."
+    },
+    "screenshotsTitle": "Así se ve",
+    "screenshot": "Captura de pantalla de la app",
+    "pricingTeaser": "Empieza gratis. Premium cuesta US$ {price} al mes.",
+    "pricingLink": "Ver precios",
+    "install": "Funciona en el navegador y puedes instalarla en tu celular."
   }
 }

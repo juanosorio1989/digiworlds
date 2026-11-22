@@ -6,5 +6,72 @@
     "refunds": "Refunds",
     "privacy": "Privacy",
     "contact": "Contact"
+  },
+  "brand": "digiworlds",
+  "switch": {
+    "label": "Español"
+  },
+  "cta": {
+    "try": "Try it free"
+  },
+  "launch": {
+    "label": "Coming soon"
+  },
+  "skip": "Skip to content",
+  "aria": {
+    "mainNav": "Main menu",
+    "footerNav": "Site links",
+    "home": "digiworlds, home"
+  },
+  "footer": {
+    "copy": "© {year} digiworlds",
+    "email": "Email us"
+  },
+  "legal": {
+    "updated": "Last updated: {date}"
+  },
+  "meta": {
+    "home": {
+      "title": "digiworlds — Improve your English pronunciation",
+      "description": "Practice American English pronunciation on your phone, with help in Spanish. For Spanish-speaking adults living in the United States."
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Speak English with more confidence",
+      "text": "Practice American English pronunciation on your phone. Listen, repeat, and get instant help in Spanish.",
+      "audience": "For Spanish-speaking adults living in the United States."
+    },
+    "benefitsTitle": "What it helps you do",
+    "benefit1": {
+      "title": "Help with every sound",
+      "text": "You get feedback on each sound, with a short spoken tip in Spanish."
+    },
+    "benefit2": {
+      "title": "See how it's done",
+      "text": "Animations show where to put your tongue and lips."
+    },
+    "benefit3": {
+      "title": "No reading needed",
+      "text": "You use it by listening and speaking."
+    },
+    "stepsTitle": "How it works",
+    "step1": {
+      "title": "Listen",
+      "text": "Hear how the model sounds."
+    },
+    "step2": {
+      "title": "Repeat",
+      "text": "Say it out loud."
+    },
+    "step3": {
+      "title": "Improve",
+      "text": "See what to fix and try again."
+    },
+    "screenshotsTitle": "What it looks like",
+    "screenshot": "App screenshot",
+    "pricingTeaser": "Start free. Premium is US$ {price} per month.",
+    "pricingLink": "See pricing",
+    "install": "Works in your browser, and you can install it on your phone."
   }
 }
