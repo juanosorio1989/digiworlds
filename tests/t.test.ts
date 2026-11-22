@@ -97,3 +97,29 @@ test('malformed tokens throw', () => {
     delete (es as any).tmp;
   }
 });
+
+test('tHtml renders supportEmail as a mailto link', () => {
+  (es as any).tmp = { m: 'Write {supportEmail}.' };
+  try {
+    assert.ok(tHtml('es', 'tmp.m').includes('<a href="mailto:info@digiworlds.store">info@digiworlds.store</a>'));
+    assert.ok(
+      tHtml('es', 'tmp.m', { supportEmail: 'SUPPORT_EMAIL' }).includes(
+        '<mark class="placeholder"><a href="mailto:SUPPORT_EMAIL">SUPPORT_EMAIL</a></mark>',
+      ),
+    );
+    const esc = tHtml('es', 'tmp.m', { supportEmail: "o'b@x.co" });
+    assert.ok(esc.includes('<a href="mailto:o&#39;b@x.co">o&#39;b@x.co</a>'));
+    assert.equal(t('es', 'tmp.m'), 'Write info@digiworlds.store.');
+  } finally {
+    delete (es as any).tmp;
+  }
+});
+
+test('tRaw renders supportEmail as a mailto link', () => {
+  (es as any).tmp = { list: ['a {supportEmail}'] };
+  try {
+    assert.ok(tRaw<string[]>('es', 'tmp.list')[0].includes('<a href="mailto:info@digiworlds.store">'));
+  } finally {
+    delete (es as any).tmp;
+  }
+});

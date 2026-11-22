@@ -1,13 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
-import { site } from '../config/site.ts';
 import { pathFor } from '../i18n/routes.ts';
 import type { Lang } from '../i18n/routes.ts';
 import { t, tHtml } from '../i18n/t.ts';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
-const mailLink = `<a href="mailto:${site.supportEmail}">${site.supportEmail}</a>`;
-const emailHtml = tHtml(lang, 'contact.email').replace(site.supportEmail, mailLink);
+const emailHtml = tHtml(lang, 'contact.email');
 const operatorHtml = tHtml(lang, 'contact.operator');
 ---
 <Base lang={lang} page="contact">

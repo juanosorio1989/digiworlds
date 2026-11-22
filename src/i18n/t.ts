@@ -60,9 +60,9 @@ function interpolate(
     const literal = template.slice(last, idx);
     out += html ? escapeHtml(literal) : literal;
     if (html) {
-      out += isPlaceholder(value)
-        ? `<mark class="placeholder">${escapeHtml(value)}</mark>`
-        : escapeHtml(value);
+      const safe = escapeHtml(value);
+      const inner = name === 'supportEmail' ? `<a href="mailto:${safe}">${safe}</a>` : safe;
+      out += isPlaceholder(value) ? `<mark class="placeholder">${inner}</mark>` : inner;
     } else {
       out += value;
     }
