@@ -1,4 +1,4 @@
-// Regenerates public/favicon.*, apple-touch-icon.png and og/og-<lang>.png. Run: node scripts/make-images.mjs
+// Regenerates src/assets/brand/spiral.png (from src/assets/brand/blanco2.png), public/favicon.*, apple-touch-icon.png and og/og-<lang>.png. Run: node scripts/make-images.mjs
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
@@ -23,8 +23,8 @@ const spiral = (size) => sharp(spiralPath).resize(size, size).png().toBuffer();
 
 // Favicon: transparent SVG embedding the spiral (128px data shown at 64x64).
 const spiral128 = (await spiral(128)).toString('base64');
-const faviconSvg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" width="64" height="64">
-  <image width="64" height="64" href="data:image/png;base64,${spiral128}" xlink:href="data:image/png;base64,${spiral128}"/>
+const faviconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <image width="64" height="64" href="data:image/png;base64,${spiral128}"/>
 </svg>
 `;
 writeFileSync(out('favicon.svg'), faviconSvg);

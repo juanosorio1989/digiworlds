@@ -11,7 +11,7 @@ const navKeys = pageKeys.filter((k) => k !== 'home');
 ---
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="wordmark" href={pathFor('home', lang)} aria-label={t(lang, 'aria.home')}><Image src={spiral} alt="" width={32} height={32} class="wordmark-mark" loading="eager" />{t(lang, 'brand')}</a>
+    <a class="wordmark" href={pathFor('home', lang)} aria-label={t(lang, 'aria.home')}><Image src={spiral} alt="" width={32} height={32} densities={[1, 2]} class="wordmark-mark" loading="eager" />{t(lang, 'brand')}</a>
     <nav aria-label={t(lang, 'aria.mainNav')}>
       <ul class="nav-list">
         {navKeys.map((k) => (
