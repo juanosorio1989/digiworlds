@@ -2,6 +2,8 @@
 import { pageKeys, pathFor } from '../i18n/routes.ts';
 import type { Lang, PageKey } from '../i18n/routes.ts';
 import { t } from '../i18n/t.ts';
+import { Image } from 'astro:assets';
+import spiral from '../assets/brand/spiral.png';
 import LangSwitch from './LangSwitch.astro';
 interface Props { lang: Lang; page: PageKey | 'notFound' }
 const { lang, page } = Astro.props;
@@ -9,7 +11,7 @@ const navKeys = pageKeys.filter((k) => k !== 'home');
 ---
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="wordmark" href={pathFor('home', lang)} aria-label={t(lang, 'aria.home')}>{t(lang, 'brand')}</a>
+    <a class="wordmark" href={pathFor('home', lang)} aria-label={t(lang, 'aria.home')}><Image src={spiral} alt="" width={32} height={32} class="wordmark-mark" loading="eager" />{t(lang, 'brand')}</a>
     <nav aria-label={t(lang, 'aria.mainNav')}>
       <ul class="nav-list">
         {navKeys.map((k) => (

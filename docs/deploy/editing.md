@@ -22,6 +22,10 @@ Only `src/config/site.ts` should hold the real values. The others are tests, the
 
 After changing the hero copy (`home.hero.*`) or the brand colors, run `node scripts/make-images.mjs` and commit the regenerated PNG/ICO files.
 
+## Logo and icons
+
+The source logo is `src/assets/brand/blanco2.png` (1024x1024, transparent). Run `node scripts/make-images.mjs` to regenerate `src/assets/brand/spiral.png` (cropped spiral, used in the header), `public/favicon.svg`, `public/favicon.ico`, `public/apple-touch-icon.png` and `public/og/og-<lang>.png`. Commit the results.
+
 ## Redeploy
 
 1. Edit.

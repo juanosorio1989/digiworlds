@@ -60,7 +60,8 @@ a:hover { color: var(--brand-dark); }
 
 .site-header { border-bottom: 1px solid var(--border); }
 .header-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.25rem 1rem; padding-top: 0.5rem; padding-bottom: 0.5rem; }
-.wordmark { font-size: 1.35rem; font-weight: 700; color: var(--text); text-decoration: none; display: inline-flex; align-items: center; min-height: 48px; }
+.wordmark { font-size: 1.35rem; font-weight: 700; color: var(--text); text-decoration: none; display: inline-flex; align-items: center; min-height: 48px; gap: 0.5rem; }
+.wordmark-mark { width: 32px; height: 32px; flex: none; }
 
 .nav-list, .footer-links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 0.25rem; }
 .nav-list a, .footer-links a, .lang-switch, .footer-row a {

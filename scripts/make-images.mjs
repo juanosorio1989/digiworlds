@@ -11,18 +11,32 @@ const root = new URL('../public/', import.meta.url);
 const out = (p) => new URL(p, root);
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-// Simple mark: brand-colored rounded square with a white "d".
-const faviconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect width="64" height="64" rx="14" fill="${BRAND}"/>
-  <text x="32" y="46" text-anchor="middle" font-family="${FONT}" font-size="42" font-weight="700" fill="#ffffff">d</text>
+// Spiral mark: crop the original logo (alpha bbox ~259,137,766,646) to a 512x512 PNG.
+const brandDir = new URL('../src/assets/brand/', import.meta.url);
+const spiralPath = fileURLToPath(new URL('spiral.png', brandDir));
+await sharp(fileURLToPath(new URL('blanco2.png', brandDir)))
+  .extract({ left: 258, top: 136, width: 510, height: 510 })
+  .resize(512, 512)
+  .png()
+  .toFile(spiralPath);
+const spiral = (size) => sharp(spiralPath).resize(size, size).png().toBuffer();
+
+// Favicon: transparent SVG embedding the spiral (128px data shown at 64x64).
+const spiral128 = (await spiral(128)).toString('base64');
+const faviconSvg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" width="64" height="64">
+  <image width="64" height="64" href="data:image/png;base64,${spiral128}" xlink:href="data:image/png;base64,${spiral128}"/>
 </svg>
 `;
 writeFileSync(out('favicon.svg'), faviconSvg);
 
-await sharp(Buffer.from(faviconSvg), { density: 384 }).resize(180, 180).png().toFile(fileURLToPath(out('apple-touch-icon.png')));
+// Apple touch icon: white background (iOS fills transparency black), spiral 150x150 centered.
+await sharp({ create: { width: 180, height: 180, channels: 4, background: BG } })
+  .composite([{ input: await spiral(150), left: 15, top: 15 }])
+  .png()
+  .toFile(fileURLToPath(out('apple-touch-icon.png')));
 
 // ICO with one 32x32 PNG image (PNG-in-ICO is valid for all current browsers).
-const png32 = await sharp(Buffer.from(faviconSvg), { density: 192 }).resize(32, 32).png().toBuffer();
+const png32 = await spiral(32);
 const header = Buffer.alloc(22);
 header.writeUInt16LE(0, 0); header.writeUInt16LE(1, 2); header.writeUInt16LE(1, 4);
 header.writeUInt8(32, 6); header.writeUInt8(32, 7); header.writeUInt16LE(1, 10); header.writeUInt16LE(32, 12);
@@ -50,9 +64,12 @@ for (const lang of ['es', 'en']) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="${BG}"/>
   <rect width="1200" height="24" fill="${BRAND}"/>
-  <text x="80" y="130" font-family="${FONT}" font-size="48" font-weight="700" fill="${BRAND}">digiworlds</text>
+  <text x="196" y="126" font-family="${FONT}" font-size="48" font-weight="700" fill="${BRAND}">digiworlds</text>
   <text x="80" y="300" font-family="${FONT}" font-size="72" font-weight="700" fill="${TEXT}">${tspans}</text>
 </svg>`;
-  await sharp(Buffer.from(svg)).png().toFile(fileURLToPath(out(`og/og-${lang}.png`)));
+  await sharp(Buffer.from(svg))
+    .composite([{ input: await spiral(96), left: 80, top: 60 }])
+    .png()
+    .toFile(fileURLToPath(out(`og/og-${lang}.png`)));
 }
 console.log('images generated');
