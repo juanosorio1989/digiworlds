@@ -35,8 +35,12 @@ The source logo is `src/assets/brand/blanco2.png` (1024x1024, transparent). Run 
 
 ## Before requesting the Polar review
 
+Full steps: [the pre-review plan](../superpowers/plans/2026-11-27-polar-review-pass.md).
+
 - [ ] Launch flag off (`showLaunchLabel: false`) and the app's free lessons work.
 - [ ] `operatorName` and `supportEmail` filled in (no placeholder warnings in `npm run check`).
 - [ ] Each privacy and terms promise compared with what the real app does.
 - [ ] Legal review done (voice data, US state biometric laws).
 - [ ] The Polar product price is 9.99, matching `premiumPriceUsd`.
+- [ ] Real app screenshots on the home page (no "App screenshot" boxes).
+- [ ] The site and the app answer the `Polar/1.0 (+https://polar.sh)` user agent in under 5 s.
